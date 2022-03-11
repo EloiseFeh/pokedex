@@ -48,6 +48,9 @@ export default {
         background-color: #FFFFFF;
         float: right;
         display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
 
     }
 

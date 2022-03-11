@@ -21,6 +21,11 @@ export default {
   margin: 0;
   padding: 0;
 }
+
+h1{
+  font-weight: bold !important;
+}
+
 #app {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,6 +34,18 @@ export default {
   color: #2c3e50;
 }
 
+.Page-container{
+    width: 79vw;
+}
+
+.Page-title{
+  text-align: left;
+}
+
+/* 4 elev */
+.Elev4{
+  box-shadow: 0px 8px 22px -6px rgba(24, 39, 75, 0.12), 0px 14px 64px -4px rgba(24, 39, 75, 0.12);
+}
 /* 5 elev */
 .Elev5 {
   box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
