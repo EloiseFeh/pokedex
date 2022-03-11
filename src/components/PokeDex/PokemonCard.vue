@@ -9,8 +9,10 @@
 <script>
 export default {
     name:"PokemonCard",
+    setup(){
+
+    },
     props: {
-    imgPath: String,
     name: String,
     type: String,
   }

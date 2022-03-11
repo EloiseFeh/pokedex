@@ -9,7 +9,7 @@ const routes = [
     component: PokeDex,
   },
   {
-    path: "/pokemon",
+    path: "/pokedex/:id",
     name: "PokemonInfo",
     component: PokemonInfo,
   },

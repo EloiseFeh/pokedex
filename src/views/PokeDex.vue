@@ -3,12 +3,11 @@
         <h1 class="Page-title mt-5 mb-5">Ellie's PokeDex</h1>
 
         <div class="mt-5 d-flex justify-content-around flex-wrap">
-            <PokemonCard name="Venosaur" :imgPath="require('../assets/img/venosaur.png')" />
-            <PokemonCard name="Pikachu" :imgPath="require('../assets/img/pikachu.png')"/>
-            <PokemonCard name="Ninetales" :imgPath="require('../assets/img/ninetales.png')"/>
-            <PokemonCard name="Vaporeon" :imgPath="require('../assets/img/vaporeon.png')"/>
-            <PokemonCard name="Kadabra" :imgPath="require('../assets/img/kadabra.png')"/>
-            <PokemonCard name="Gengar" :imgPath="require('../assets/img/gengar.png')"/>
+            <div v-for="(pokemon, index) in pokemons" :key='pokemon.url' class="Card Elev4">
+            <router-link :to="{ name: 'PokemonInfo', params: {id: index+1 } }">
+            <PokemonCard :name="pokemon.name" :imgPath="require('../assets/img/venosaur.png')" />
+            </router-link>
+            </div>
         </div>
 
     </div>
@@ -16,15 +15,49 @@
 
 <script>
 import PokemonCard from '@/components/PokeDex/PokemonCard.vue'
+import api from "@/services/api.js"
+import { ref, onMounted } from 'vue'
 
 export default {
     name: "PokeDex",
+    setup(){
+        const pokemons = ref([]);
+        const fetchPokemons = () => 
+        api.get("/pokemon?limit=9").then((response) => pokemons.value = response.data.results);
+
+        onMounted(fetchPokemons);
+
+        return {pokemons};
+    },
     components: {
     PokemonCard,
   },
 }
 </script>
 
-<style scoped>
+<style>
+.Card{
+    height: 7rem;
+    width: 25rem;
+    /* position: absolute; */
+    border-radius: 10px;
+    margin-bottom: 8%;
+}
 
+.Card-img{
+    height: auto;
+    width: 40%;
+    float: left;
+    position: relative;
+    bottom: 10%;
+    left: -4%;
+}
+
+.Card-title{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 600;
+    padding-right: 8%;
+}
 </style>
