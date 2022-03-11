@@ -5,13 +5,13 @@
 
         <ul class="SideMenu-List py-4 px-4 d-flex flex-column align-items-start">
             <li class="SideMenu-Item mb-3 d-flex w-100">
-                <a href="#">PokeDex</a>
+                <router-link to="/">PokeDex</router-link>
             </li>
             <li class="SideMenu-Item mb-4 d-flex w-100">
-                <a href="#">Trainer Card</a>
+                <router-link to="/trainercard">Trainer Card</router-link>
             </li>
             <li class="SideMenu-Item mb-4 d-flex w-100">
-                <a href="https://github.com/EloiseFeh/pokedex" target="_blank">Github</a>
+                <a to="https://github.com/EloiseFeh/pokedex" target="_blank">Github</a>
             </li>
         </ul>
 

@@ -1,11 +1,10 @@
 <template>
   <SideMenu />
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <router-view/>
 </template>
 
 <script>
-import SideMenu from "./components/SideMenu.vue";
-// import HelloWorld from './components/HelloWorld.vue'
+import SideMenu from "@/components/SideMenu.vue";
 
 export default {
   name: "App",
