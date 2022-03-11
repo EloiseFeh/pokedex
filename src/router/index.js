@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
 import PokeDex from "../views/PokeDex";
+import PokemonInfo from "../views/PokemonInfo";
 
 const routes = [
   {
     path: "/",
     name: "PokeDex",
     component: PokeDex,
+  },
+  {
+    path: "/pokemon",
+    name: "PokemonInfo",
+    component: PokemonInfo,
   },
   {
     path: "/trainercard",
