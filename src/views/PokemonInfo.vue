@@ -1,16 +1,16 @@
 <template>
-    <div class="Page-container mx-5 d-flex ">
+    <div class="Page-container mx-5 d-flex flex-wrap">
 
-        <div class="Card-pokemon me-5 Elev5 d-flex flex-column justify-content-around align-items-center">
-            <h6 class="id">#00{{id}}</h6>
+        <div  :class="{borderFire: type=='fire'}" class="Card-pokemon me-5 Elev5 d-flex flex-column align-items-center">
+            <h6 class="id mt-4">#00{{id}}</h6>
                 <img class="Pokemon-img" :src="front">
         </div>
 
         <div class="Info-container text-start">
             <h2 class="Info-title">{{pokeName}}</h2>
-            <h5>Type: {{type}} </h5>
-            <h5>Abilities: {{ability1}} {{ability2}}</h5>
-            <h5>Height: {{height}} </h5>
+            <h5 class="mb-3">Type: {{type}} </h5>
+            <h5 class="mb-3">Abilities: {{ability1}} | {{ability2}}</h5>
+            <h5 class="mb-3">Height: {{height}} </h5>
             <h5>Weight: {{weight}}</h5>
         </div>
     </div>
@@ -83,8 +83,8 @@ export default {
     margin-top: 8%;
 }
 .Card-pokemon{
-    width: 20rem;
-    height: 20rem;
+    width: 13rem;
+    height: 13rem;
     border: 3px solid #7CEF4E
 }
 
@@ -93,8 +93,22 @@ export default {
     height: auto;
 }
 
+.Info-container{
+    text-transform: capitalize;
+}
+
 .Info-title{
     font-weight: 600;
     text-transform: uppercase;
+}
+
+.Border-grass{
+    border: 3px solid #7CEF4E;
+}
+.Border-fire{
+    border: 3px solid #FF4422
+}
+.Border-water{
+    border: 3px solid #3399FF
 }
 </style>
