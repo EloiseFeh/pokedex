@@ -35,7 +35,7 @@ h1{
 }
 
 .Page-container{
-    width: 79vw;
+    width: 75vw;
 }
 
 .Page-title{

@@ -2,7 +2,7 @@
     <div class="Page-container mx-4">
         <h1 class="Page-title mt-5 mb-5">Ellie's PokeDex</h1>
 
-        <div class="mt-5 d-flex justify-content-around flex-wrap">
+        <div class="Pokedex-container d-flex justify-content-between flex-wrap">
             
             <router-link  v-for="(pokemon, index) in pokemons" :key='pokemon.url' class="Card Elev4" :to="{ name: 'PokemonInfo', params: {id: index+1 } }">
             <PokemonCard :name="pokemon.name" :id="index+1" />
@@ -36,6 +36,11 @@ export default {
 </script>
 
 <style>
+.Pokedex-container{
+    margin-top: 3rem;
+    margin-left: 4rem ;
+    margin-right: 4rem ; 
+}
 .Card{
     height: 7rem;
     width: 25rem;
