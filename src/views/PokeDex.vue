@@ -3,11 +3,11 @@
         <h1 class="Page-title mt-5 mb-5">Ellie's PokeDex</h1>
 
         <div class="mt-5 d-flex justify-content-around flex-wrap">
-            <div v-for="(pokemon, index) in pokemons" :key='pokemon.url' class="Card Elev4">
-            <router-link :to="{ name: 'PokemonInfo', params: {id: index+1 } }">
-            <PokemonCard :name="pokemon.name" :imgPath="require('../assets/img/venosaur.png')" />
+            
+            <router-link  v-for="(pokemon, index) in pokemons" :key='pokemon.url' class="Card Elev4" :to="{ name: 'PokemonInfo', params: {id: index+1 } }">
+            <PokemonCard :name="pokemon.name" :id="index+1" />
             </router-link>
-            </div>
+            
         </div>
 
     </div>
@@ -39,25 +39,8 @@ export default {
 .Card{
     height: 7rem;
     width: 25rem;
-    /* position: absolute; */
+    text-decoration: none;
     border-radius: 10px;
     margin-bottom: 8%;
-}
-
-.Card-img{
-    height: auto;
-    width: 40%;
-    float: left;
-    position: relative;
-    bottom: 10%;
-    left: -4%;
-}
-
-.Card-title{
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    font-weight: 600;
-    padding-right: 8%;
 }
 </style>
